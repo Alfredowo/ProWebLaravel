@@ -1,6 +1,4 @@
-<!-- resources/views/contactos/edit.blade.php -->
-
-@extends('layouts.app') <!-- Ajusta según tu layout -->
+@extends('layouts.app')
 
 @section('content')
 <div class="container">

@@ -41,17 +41,15 @@ Route::get('/contacto', function () {
 
 Route::get('/contacto', [ContactoController::class, 'mostrarFormulario'])->name('contacto.mostrar');
 Route::post('/contacto', [ContactoController::class, 'procesarFormulario'])->name('contacto.procesar');
-
 Route::get('/contactos', [ContactoController::class, 'index'])->name('contactos.index');
 
-// Ruta para mostrar el formulario de edición
+// mostrar el formulario de edición
 Route::get('/contactos/{contacto}/edit', [ContactoController::class, 'edit'])->name('contactos.edit');
-//Route::get('/contactos/{contacto}/edit', 'ContactoController@edit')->name('contactos.edit');
 
-// Ruta para actualizar el contacto después de la edición
+// actualizar el contacto después de la edición
 Route::put('/contactos/{contacto}', [ContactoController::class, 'update'])->name('contactos.update');
 
-// Ruta para eliminar el contacto
+// eliminar el contacto
 Route::delete('/contactos/{contacto}', [ContactoController::class, 'destroy'])->name('contactos.destroy');
 
 //ChatBot

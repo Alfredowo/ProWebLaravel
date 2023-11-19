@@ -1,6 +1,4 @@
-<!-- resources/views/contactos/edit.blade.php -->
-
-@extends('layouts.app') <!-- Ajusta según tu layout -->
+@extends('layouts.app') 
 
 @section('content')
 
@@ -33,7 +31,6 @@
           <a href="#" class="btn-learn-more">Aprende Más</a>
         </div>
       </div>
-
 
     </div>
   </section><!-- End About Us Section -->

@@ -26,7 +26,7 @@ class ContactoController extends Controller
 
     public function index()
     {
-        $contactos = Contacto::all(); // Asegúrate de importar el modelo Contacto
+        $contactos = Contacto::all(); 
         return view('contactos.index', compact('contactos'));
     }
 

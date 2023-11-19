@@ -1,6 +1,4 @@
-<!-- resources/views/contactos/index.blade.php -->
-
-@extends('layouts.app') <!-- Ajusta según tu layout -->
+@extends('layouts.app') 
 
 @section('content')
 <div class="container">
@@ -33,7 +31,7 @@
                 <td>{{ $contacto->asunto }}</td>
                 <td>{{ $contacto->mensaje }}</td>
                 <td>
-                    <a href="{{ route('contactos.edit', $contacto->id) }}" class="btn btn-warning">Modificar</a>
+                    <a href="{{ route('contactos.edit', $contacto->id) }}" class="btn btn-success">Modificar</a>
                     <form action="{{ route('contactos.destroy', $contacto->id) }}" method="post" style="display:inline;">
                         @csrf
                         @method('delete')

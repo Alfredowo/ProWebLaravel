@@ -1,6 +1,4 @@
-<!-- resources/views/contactos/index.blade.php -->
-
-@extends('layouts.app') <!-- Ajusta según tu layout -->
+@extends('layouts.app') 
 
 @section('content')
 
@@ -84,10 +82,6 @@
     <script>
         $(document).ready(function() {
             $(".php-email-form").submit(function(event) {
-                //event.preventDefault(); // Evita que el formulario se envíe normalmente
-
-                // Aquí podrías agregar código para realizar una petición AJAX si lo prefieres
-
                 // Muestra el mensaje de éxito
                 $(".sent-message").show();
             });

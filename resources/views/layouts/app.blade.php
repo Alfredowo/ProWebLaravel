@@ -23,7 +23,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-    <!-- Desde CDN (Ajusta las versiones según tus necesidades) -->
+    <!-- Desde CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-rbsRCEJJIoAqDNLtj8C7229k4GY5GCJ8FwBhPDQT9f+JepNq4Pd+6F5XDIuUMQI" crossorigin="anonymous"></script>
 </head>
 
@@ -176,12 +176,9 @@
                 return;
             }
 
-            // Si llegamos aquí, el correo electrónico es válido
+            //el correo electrónico es válido
             alert('Listo, te enviaremos noticias.');
-            // Limpiar el campo de correo electrónico
             emailInput.value = '';
-
-            // No se enviará el formulario, ya que hemos utilizado event.preventDefault()
         });
 
         function isValidEmail(email) {
