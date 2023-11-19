@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\ChatbotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +53,14 @@ Route::put('/contactos/{contacto}', [ContactoController::class, 'update'])->name
 
 // Ruta para eliminar el contacto
 Route::delete('/contactos/{contacto}', [ContactoController::class, 'destroy'])->name('contactos.destroy');
+
+//ChatBot
+Route::get('/chat', [ChatbotController::class, 'chat']);
+Route::post('/chat', [ChatbotController::class, 'procesarPregunta']);
+Route::get('/entrenar', [ChatbotController::class, 'entrenar']);
+Route::post('/entrenar', [ChatbotController::class, 'guardarEntrenamiento']);
+
+Route::post('/procesar-pregunta', [ChatbotController::class, 'procesarPregunta'])->name('procesar-pregunta');
+
+// Ruta para guardar el entrenamiento
+Route::post('/guardar-entrenamiento', [ChatbotController::class, 'guardarEntrenamiento'])->name('guardar-entrenamiento');

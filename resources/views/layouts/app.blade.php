@@ -22,6 +22,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <!-- Desde CDN (Ajusta las versiones según tus necesidades) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-rbsRCEJJIoAqDNLtj8C7229k4GY5GCJ8FwBhPDQT9f+JepNq4Pd+6F5XDIuUMQI" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -56,6 +59,15 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('contactos') ? 'active' : '' }}" href="{{ url('contactos') }}">Crud</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Chatbot
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item {{ request()->is('chat') ? 'active' : '' }}" href="{{ url('chat') }}">Chat</a>
+                            <a class="dropdown-item {{ request()->is('entrenar') ? 'active' : '' }}" href="{{ url('entrenar') }}">Entrenar</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="getstarted" href="#">Empezar</a>
@@ -148,8 +160,9 @@
     <!-- End Footer -->
 
     <!-- JS Files -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         document.getElementById('subscription-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Evitar el envío del formulario
@@ -176,6 +189,23 @@
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
         }
+    </script>
+    <script>
+        // Obtén el elemento del botón y del menú dropdown
+        const dropdownButton = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        // Agrega un evento de clic al botón para alternar la visibilidad del menú dropdown
+        dropdownButton.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('show');
+        });
+
+        // Cierra el menú dropdown si se hace clic fuera de él
+        document.addEventListener('click', function(event) {
+            if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
     </script>
 </body>
 
