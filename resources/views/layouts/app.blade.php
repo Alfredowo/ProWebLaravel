@@ -91,8 +91,8 @@
                     <div class="col-lg-6">
                         <h4>Únete a nuestro boletín</h4>
                         <p>Recibe noticias y actualizaciones directamente en tu correo.</p>
-                        <form action="" method="post">
-                            <input type="email" name="email" placeholder="Tu correo electrónico">
+                        <form id="subscription-form">
+                            <input type="email" id="email1" name="email1" placeholder="correo@example.com" required>
                             <input type="submit" value="Suscribir">
                         </form>
                     </div>
